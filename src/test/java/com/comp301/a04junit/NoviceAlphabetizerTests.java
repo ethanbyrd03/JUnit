@@ -24,7 +24,13 @@ public class NoviceAlphabetizerTests {
         for (int i = 0; i<3; i++) {
             assertTrue(test.next() != badStr);
         }
+    }
 
+    @Test
+    public void testConstructorNull() {
+        String[] testStr = new String[10];
+        Alphabetizer test = new Alphabetizer(testStr);
+        try {test.next();} catch (NullPointerException e) {e.printStackTrace();}
     }
 
     @Test
