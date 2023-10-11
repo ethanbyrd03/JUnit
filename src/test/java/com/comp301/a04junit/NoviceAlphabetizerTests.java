@@ -15,8 +15,8 @@ public class NoviceAlphabetizerTests {
     @Test
     public void testConstructor() {
         String[] a = new String[1];
-        a[0] = "a";
         Alphabetizer test = new Alphabetizer(a);
+        throw new NullPointerException();
     }
 
     @Test
@@ -36,7 +36,7 @@ public class NoviceAlphabetizerTests {
         testStr[1] = "a1";
         testStr[2] = "c1";
         Alphabetizer test = new Alphabetizer(testStr);
-        for (int i = 0; i<3; i++) {
+        for (int i = 0; i<=3; i++) {
         try {
             test.next();
         } catch (NoSuchElementException e) {
