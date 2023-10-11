@@ -19,6 +19,13 @@ public class AdeptItemTests {
     }
 
     @Test
+    public void testGetNameCapital() {
+        String testName = "Fungus";
+        Item test = new ItemImpl(testName);
+        assertTrue(test.getName() == testName);
+    }
+
+    @Test
     public void testEqualsNotEqual() {
         String test1Name = "fungus";
         String test2Name = "patch";
@@ -33,5 +40,12 @@ public class AdeptItemTests {
         Item test1 = new ItemImpl(test1Name);
         Item test2 = new ItemImpl(test1Name);
         assertTrue(test1.equals(test2));
+    }
+
+    @Test
+    public void testEqualsNullParameter() {
+        String test1Name = "fungus";
+        Item test1 = new ItemImpl(test1Name);
+        try {test1.equals(null);} catch (IllegalArgumentException e) {assertTrue(true);}
     }
 }
