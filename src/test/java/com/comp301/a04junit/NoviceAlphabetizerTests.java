@@ -52,6 +52,9 @@ public class NoviceAlphabetizerTests {
         testStr[1] = "a1";
         testStr[2] = "c1";
         Alphabetizer test = new Alphabetizer(testStr);
-        assertTrue(test.hasNext());
+        for (int i = 0; i < 3; i++) {
+            test.next();
+            assertTrue(test.hasNext());
+        }
     }
 }
