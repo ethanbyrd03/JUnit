@@ -26,15 +26,9 @@ public class NoviceAlphabetizerTests {
         }
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testConstructorNull() {
-        String[] testStr = new String[3];
-        testStr[0] = "b1";
-        testStr[1] = null;
-        testStr[2] = "c1";
-        Alphabetizer test = new Alphabetizer(testStr);
-        for (int i = 0; i<2; i++) {
-        assertTrue(test.next() != null);}
+        new Alphabetizer(null);
     }
 
     @Test
