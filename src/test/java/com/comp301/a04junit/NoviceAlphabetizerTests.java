@@ -45,6 +45,16 @@ public class NoviceAlphabetizerTests {
     }
 
     @Test
+    public void testNextCapital() {
+        String[] testStr = new String[3];
+        testStr[0] = "B1";
+        testStr[1] = "A1";
+        testStr[2] = "C1";
+        Alphabetizer test = new Alphabetizer(testStr);
+        assertTrue(test.next() == "A1");
+    }
+
+    @Test
     public void testNextNoNext() {
         String[] testStr = new String[3];
         testStr[0] = "b1";
