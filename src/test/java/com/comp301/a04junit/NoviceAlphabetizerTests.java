@@ -14,9 +14,16 @@ import java.util.NoSuchElementException;
 public class NoviceAlphabetizerTests {
     @Test
     public void testConstructor() {
-        String[] a = new String[1];
-        Alphabetizer test = new Alphabetizer(a);
-        try {test.next();} catch (NullPointerException e) {e.printStackTrace();}
+        String[] testStr = new String[3];
+        testStr[0] = "b1";
+        testStr[1] = "a1";
+        testStr[2] = "c1";
+        Alphabetizer test = new Alphabetizer(testStr);
+        String badStr = "d1";
+        testStr[1] = badStr;
+        for (int i = 0; i<3; i++) {
+            assertTrue(test.next() != badStr);
+        }
 
     }
 
