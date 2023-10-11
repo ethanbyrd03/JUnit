@@ -28,7 +28,8 @@ public class NoviceAlphabetizerTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void testConstructorNull() {
-        new Alphabetizer(null);
+        try {new Alphabetizer(null);}
+        catch (IllegalArgumentException e) {e.printStackTrace();}
     }
 
     @Test
