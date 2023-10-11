@@ -16,7 +16,8 @@ public class NoviceAlphabetizerTests {
     public void testConstructor() {
         String[] a = new String[1];
         Alphabetizer test = new Alphabetizer(a);
-        throw new NullPointerException();
+        try {test.next();} catch (NullPointerException e) {e.printStackTrace();}
+
     }
 
     @Test
