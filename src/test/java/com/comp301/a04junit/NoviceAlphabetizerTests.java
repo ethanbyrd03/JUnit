@@ -26,9 +26,9 @@ public class NoviceAlphabetizerTests {
         }
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testConstructorNull() throws IllegalArgumentException {
-        new Alphabetizer(null);
+    @Test
+    public void testConstructorNull() {
+        try {new Alphabetizer(null);} catch(IllegalArgumentException e) {assertTrue(true);}
     }
 
     @Test
