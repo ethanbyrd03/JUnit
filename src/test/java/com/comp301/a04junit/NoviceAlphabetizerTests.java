@@ -26,13 +26,10 @@ public class NoviceAlphabetizerTests {
         }
     }
 
-    /*@Test
-    public void testConstructorNull() {
-        try {new Alphabetizer(null);
-            assertTrue(false);}
-        catch (IllegalArgumentException e) {e.printStackTrace();
-        assertTrue(true);}
-    }*/
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructorNull() throws IllegalArgumentException {
+        new Alphabetizer(null);
+    }
 
     @Test
     public void testNext() {
