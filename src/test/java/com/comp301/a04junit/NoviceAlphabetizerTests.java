@@ -36,11 +36,12 @@ public class NoviceAlphabetizerTests {
         testStr[1] = "a1";
         testStr[2] = "c1";
         Alphabetizer test = new Alphabetizer(testStr);
+        for (int i = 0; i<3; i++) {
         try {
             test.next();
         } catch (NoSuchElementException e) {
             e.printStackTrace();
-        }
+        }}
     }
 
     @Test
