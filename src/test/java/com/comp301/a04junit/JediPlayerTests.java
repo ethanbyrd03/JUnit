@@ -31,7 +31,7 @@ public class JediPlayerTests {
     @Test
     public void testGetInventory() {
         Player a = new PlayerImpl("Ethan", 0, 0);
-        assertTrue(a.getInventory().isEmpty());
+        assertTrue(a.getInventory() == new InventoryImpl());
     }
 
     @Test
@@ -41,13 +41,15 @@ public class JediPlayerTests {
         int y = 0;
         a.move(Direction.NORTH);
         y += 1;
+        assertTrue((a.getPosition().getX() == x) && (a.getPosition().getY() == y));
         a.move(Direction.EAST);
         x += 1;
-        a.move(Direction.NORTH);
-        y += 1;
+        assertTrue((a.getPosition().getX() == x) && (a.getPosition().getY() == y));
+        a.move(Direction.WEST);
+        x -= 1;
+        assertTrue((a.getPosition().getX() == x) && (a.getPosition().getY() == y));
         a.move(Direction.SOUTH);
         y -= 1;
-        Position current = new PositionImpl(x, y);
         assertTrue((a.getPosition().getX() == x) && (a.getPosition().getY() == y));
     }
 }
