@@ -47,6 +47,16 @@ public class AdeptPositionTests {
     }
 
     @Test
+    public void testNorthEast() {
+        int testX = 1;
+        int testY = 2;
+        Position testPos = new PositionImpl(testX, testY);
+        Position north = testPos.getNeighbor(Direction.NORTH);
+        Position northEast = north.getNeighbor(Direction.EAST);
+        assertTrue((northEast.getX() == testX + 1) && (northEast.getY() == testY + 1));
+    }
+
+    @Test
     public void testPositionSouth() {
         int testX = 1;
         int testY = 2;
