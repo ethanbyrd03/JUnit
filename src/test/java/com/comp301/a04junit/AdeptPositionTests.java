@@ -17,8 +17,6 @@ public class AdeptPositionTests {
         int testX = 1;
         int testY = 2;
         Position testPos = new PositionImpl(testX, testY);
-        testX = 0;
-        testY = 0;
         assertTrue((testPos.getX() == 1) && (testPos.getY() == 2));
     }
 
@@ -27,7 +25,8 @@ public class AdeptPositionTests {
         int testX = -1;
         int testY = 2;
         Position testPos = new PositionImpl(testX, testY);
-        assertTrue(testPos.getX() == testX);
+        testX += 12;
+        assertTrue(testPos.getX() == -1);
     }
 
     @Test
@@ -35,7 +34,8 @@ public class AdeptPositionTests {
         int testX = 1;
         int testY = -2;
         Position testPos = new PositionImpl(testX, testY);
-        assertTrue(testPos.getY() == testY);
+        testY += 7;
+        assertTrue(testPos.getY() == -2);
     }
 
     @Test
