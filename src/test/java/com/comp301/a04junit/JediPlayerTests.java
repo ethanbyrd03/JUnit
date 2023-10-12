@@ -12,11 +12,14 @@ import org.junit.Test;
 public class JediPlayerTests {
     @Test
     public void testConstructor() {
+        int i = 0;
         try {
             new PlayerImpl(null, 0, 0);
         } catch (IllegalArgumentException e) {
             assertTrue(true);
+            i +=1;
         }
+        if (i == 0) {assertTrue(false);}
     }
 
     @Test
