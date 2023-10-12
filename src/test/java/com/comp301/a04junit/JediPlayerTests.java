@@ -31,7 +31,7 @@ public class JediPlayerTests {
     @Test
     public void testGetInventory() {
         Player a = new PlayerImpl("Ethan", 0, 0);
-        try {a.getInventory();} catch (NullPointerException e) {e.printStackTrace();}
+        assertTrue(a.getInventory() == null);
     }
 
     @Test
