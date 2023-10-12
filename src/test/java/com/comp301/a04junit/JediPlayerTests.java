@@ -31,25 +31,34 @@ public class JediPlayerTests {
     @Test
     public void testGetInventory() {
         Player a = new PlayerImpl("Ethan", 0, 0);
-        assertTrue(a.getInventory() == null);
+        assertTrue(a.getInventory().getNumItems() == 0);
     }
 
     @Test
-    public void testMove() {
+    public void testMoveNorth() {
         Player a = new PlayerImpl("Ethan", 0, 0);
-        int x = 0;
-        int y = 0;
-        a.move(Direction.NORTH);
-        y += 1;
-        assertTrue((a.getPosition().getX() == x) && (a.getPosition().getY() == y));
-        a.move(Direction.EAST);
-        x += 1;
-        assertTrue((a.getPosition().getX() == x) && (a.getPosition().getY() == y));
-        a.move(Direction.WEST);
-        x = x - 1;
-        assertTrue((a.getPosition().getX() == x) && (a.getPosition().getY() == y));
-        a.move(Direction.SOUTH);
-        y = y - 1;
-        assertTrue((a.getPosition().getX() == x) && (a.getPosition().getY() == y));
+        a.move(Direction.NORTH); a.move(Direction.NORTH);
+        assertTrue(a.getPosition().getY() == 2);
+    }
+
+    @Test
+    public void testMoveSouth() {
+        Player a = new PlayerImpl("Ethan", 0, 0);
+        a.move(Direction.SOUTH); a.move(Direction.SOUTH);
+        assertTrue(a.getPosition().getY() == -2);
+    }
+
+    @Test
+    public void testMoveEast() {
+        Player a = new PlayerImpl("Ethan", 0, 0);
+        a.move(Direction.EAST); a.move(Direction.EAST);
+        assertTrue(a.getPosition().getX() == 2);
+    }
+
+    @Test
+    public void testMoveWest() {
+        Player a = new PlayerImpl("Ethan", 0, 0);
+        a.move(Direction.WEST); a.move(Direction.WEST);
+        assertTrue(a.getPosition().getX() == -2);
     }
 }
