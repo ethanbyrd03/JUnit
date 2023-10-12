@@ -19,8 +19,7 @@ public class AdeptPositionTests {
         Position testPos = new PositionImpl(testX, testY);
         testX = 0;
         testY = 0;
-        assertTrue(testPos.getX() == 1);
-        assertTrue(testPos.getY() == 2);
+        assertTrue((testPos.getX() == 1) && (testPos.getY() == 2));
     }
 
     @Test
@@ -28,7 +27,7 @@ public class AdeptPositionTests {
         int testX = 1;
         int testY = 2;
         Position testPos = new PositionImpl(testX, testY);
-        assertTrue(testPos.getNeighbor(Direction.NORTH).getY() == testPos.getY() + 1);
+        assertTrue((testPos.getNeighbor(Direction.NORTH).getY() == testPos.getY() + 1) && (testPos.getNeighbor(Direction.NORTH).getX() == testPos.getX()));
     }
 
     @Test
@@ -36,15 +35,15 @@ public class AdeptPositionTests {
         int testX = 1;
         int testY = 2;
         Position testPos = new PositionImpl(testX, testY);
-        assertTrue(testPos.getNeighbor(Direction.SOUTH).getY() == testPos.getY() - 1);
+        assertTrue((testPos.getNeighbor(Direction.SOUTH).getY() == testPos.getY() - 1) && (testPos.getNeighbor(Direction.SOUTH).getX() == testPos.getX()));
     }
 
     @Test
-    public void testPositionNEast() {
+    public void testPositionEast() {
         int testX = 1;
         int testY = 2;
         Position testPos = new PositionImpl(testX, testY);
-        assertTrue(testPos.getNeighbor(Direction.EAST).getX() == testPos.getX() + 1);
+        assertTrue((testPos.getNeighbor(Direction.EAST).getX() == testPos.getX() + 1) && (testPos.getNeighbor(Direction.EAST).getY() == testPos.getY()));
     }
 
     @Test
@@ -52,6 +51,6 @@ public class AdeptPositionTests {
         int testX = 1;
         int testY = 2;
         Position testPos = new PositionImpl(testX, testY);
-        assertTrue(testPos.getNeighbor(Direction.WEST).getX() == testPos.getX() - 1);
+        assertTrue((testPos.getNeighbor(Direction.WEST).getX() == testPos.getX() - 1) && (testPos.getNeighbor(Direction.WEST).getY() == testPos.getY()));
     }
 }
