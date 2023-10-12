@@ -1,13 +1,15 @@
 package com.comp301.a04junit;
 
 import static org.junit.Assert.assertTrue;
-
+import static org.junit.Assert.assertArrayEquals;
 import com.comp301.a04junit.adventure.Item;
 import com.comp301.a04junit.adventure.ItemImpl;
 import com.comp301.a04junit.adventure.Inventory;
 import com.comp301.a04junit.adventure.InventoryImpl;
 
 import org.junit.Test;
+
+import java.util.*;
 
 /**
  * Write unit tests for the InventoryImpl class here
@@ -31,6 +33,26 @@ public class JediInventoryTests {
         Item b = new ItemImpl("name");
         a.addItem(b);
         assertTrue(!a.isEmpty());
+    }
+
+    @Test
+    public void testGetItem() {
+        Inventory a = new InventoryImpl();
+        Item b = new ItemImpl("name"); Item c = new ItemImpl("i"); Item d = new ItemImpl("o"); Item e = new ItemImpl("p");
+        a.addItem(b); a.addItem(c); a.addItem(d);
+        List<Item> j = a.getItems();
+        a.addItem(e);
+        assertTrue(!j.contains(e));
+    }
+
+    @Test
+    public void testGetItemList() {
+        Inventory a = new InventoryImpl();
+        Item b = new ItemImpl("name"); Item c = new ItemImpl("i"); Item d = new ItemImpl("o"); Item e = new ItemImpl("p");
+        a.addItem(b); a.addItem(c); a.addItem(d);
+        ArrayList<Item> j = new ArrayList<>();
+        j.add(b); j.add(c); j.add(d);
+        assertArrayEquals(a.getItems().toArray(), j.toArray());
     }
 
     @Test
@@ -108,5 +130,13 @@ public class JediInventoryTests {
         ab.addItem(z);
         a.transferFrom(ab);
         assertTrue(a.getNumItems() == 4 && ab.isEmpty());
+    }
+
+    @Test
+    public void testTransferFromNull() {
+        Inventory a = new InventoryImpl();
+        Item b = new ItemImpl("name"); Item c = new ItemImpl("i"); Item d = new ItemImpl("o");
+        a.addItem(b); a.addItem(c); a.addItem(d);
+        try {a.transferFrom(null);} catch (IllegalArgumentException e) {assertTrue(true);}
     }
 }
