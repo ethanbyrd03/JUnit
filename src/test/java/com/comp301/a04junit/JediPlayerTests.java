@@ -42,7 +42,7 @@ public class JediPlayerTests {
         Item b = new ItemImpl("b");
         Inventory c = a.getInventory();
         a.getInventory().addItem(b);
-        assertTrue(c.isEmpty());
+        assertTrue(!c.isEmpty());
     }
 
     @Test
