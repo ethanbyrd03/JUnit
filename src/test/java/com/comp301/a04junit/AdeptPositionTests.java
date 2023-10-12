@@ -23,6 +23,22 @@ public class AdeptPositionTests {
     }
 
     @Test
+    public void testGetX() {
+        int testX = -1;
+        int testY = 2;
+        Position testPos = new PositionImpl(testX, testY);
+        assertTrue(testPos.getX() == testX);
+    }
+
+    @Test
+    public void testGetY() {
+        int testX = 1;
+        int testY = -2;
+        Position testPos = new PositionImpl(testX, testY);
+        assertTrue(testPos.getY() == testY);
+    }
+
+    @Test
     public void testPositionNorth() {
         int testX = 1;
         int testY = 2;
@@ -52,5 +68,13 @@ public class AdeptPositionTests {
         int testY = 2;
         Position testPos = new PositionImpl(testX, testY);
         assertTrue((testPos.getNeighbor(Direction.WEST).getX() == testPos.getX() - 1) && (testPos.getNeighbor(Direction.WEST).getY() == testPos.getY()));
+    }
+
+    @Test
+    public void testNeighborNull() {
+        int testX = 1;
+        int testY = 2;
+        Position testPos = new PositionImpl(testX, testY);
+        try {testPos.getNeighbor(null);} catch (IllegalArgumentException e) {assertTrue(true);}
     }
 }
