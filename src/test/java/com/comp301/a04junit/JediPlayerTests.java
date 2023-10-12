@@ -39,6 +39,6 @@ public class JediPlayerTests {
         a.move(Direction.SOUTH);
         y -= 1;
         Position current = new PositionImpl(x, y);
-        assertTrue(a.getPosition() == current);
+        assertTrue((a.getPosition().getX() == x) && (a.getPosition().getY() == y));
     }
 }
