@@ -31,7 +31,8 @@ public class JediPlayerTests {
     @Test
     public void testGetInventory() {
         Player a = new PlayerImpl("Ethan", 0, 0);
-        assertTrue(a.getInventory() == new InventoryImpl());
+        Inventory b = new InventoryImpl();
+        assertTrue(a.getInventory() == b);
     }
 
     @Test
