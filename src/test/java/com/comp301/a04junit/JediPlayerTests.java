@@ -67,6 +67,20 @@ public class JediPlayerTests {
     }
 
     @Test
+    public void testMoveALot() {
+        int testX = 3;
+        int testY = 4;
+        Player testPos = new PlayerImpl("Ethan", testX, testY);
+        testPos.move(Direction.NORTH);
+        testPos.move(Direction.EAST);
+        testPos.move(Direction.NORTH);
+        testPos.move(Direction.WEST);
+        testPos.move(Direction.WEST);
+        testPos.move(Direction.SOUTH);
+        assertTrue((testPos.getPosition().getX() == testX - 1) && (testPos.getPosition().getY() == testY + 1));
+    }
+
+    @Test
     public void testMoveWest() {
         Player a = new PlayerImpl("Ethan", 0, 0);
         a.move(Direction.WEST); a.move(Direction.WEST);
