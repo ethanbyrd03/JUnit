@@ -57,7 +57,7 @@ public class AdeptPositionTests {
         Position northEastNorthWest = northEastNorth.getNeighbor(Direction.WEST);
         Position northEastNorthWestWest = northEastNorthWest.getNeighbor(Direction.WEST);
         Position northEastNorthWestWestSouth = northEastNorthWestWest.getNeighbor(Direction.SOUTH);
-        assertTrue((northEastNorthWestWestSouth.getX() == testX + 1) && (northEast.getY() == testY - 1));
+        assertTrue((northEastNorthWestWestSouth.getX() == testX - 1) && (northEast.getY() == testY + 1));
     }
 
     @Test
