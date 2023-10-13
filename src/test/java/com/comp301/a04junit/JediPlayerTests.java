@@ -49,27 +49,27 @@ public class JediPlayerTests {
     public void testMoveNorth() {
         Player a = new PlayerImpl("Ethan", 0, 0);
         a.move(Direction.NORTH); a.move(Direction.NORTH);
-        assertTrue(a.getPosition().getY() == 2);
+        assertTrue(a.getPosition().getY() == 2 && a.getPosition().getX() == 0);
     }
 
     @Test
     public void testMoveSouth() {
         Player a = new PlayerImpl("Ethan", 0, 0);
         a.move(Direction.SOUTH); a.move(Direction.SOUTH);
-        assertTrue(a.getPosition().getY() == -2);
+        assertTrue(a.getPosition().getY() == -2 && a.getPosition().getX() == 0);
     }
 
     @Test
     public void testMoveEast() {
         Player a = new PlayerImpl("Ethan", 0, 0);
         a.move(Direction.EAST); a.move(Direction.EAST);
-        assertTrue(a.getPosition().getX() == 2);
+        assertTrue(a.getPosition().getX() == 2 && a.getPosition().getY() == 0);
     }
 
     @Test
     public void testMoveWest() {
         Player a = new PlayerImpl("Ethan", 0, 0);
         a.move(Direction.WEST); a.move(Direction.WEST);
-        assertTrue(a.getPosition().getX() == -2);
+        assertTrue(a.getPosition().getX() == -2 && a.getPosition().getY() == 0);
     }
 }
