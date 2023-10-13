@@ -47,13 +47,17 @@ public class AdeptPositionTests {
     }
 
     @Test
-    public void testNorthEast() {
-        int testX = 1;
-        int testY = 2;
+    public void testMoveALot() {
+        int testX = 3;
+        int testY = 4;
         Position testPos = new PositionImpl(testX, testY);
         Position north = testPos.getNeighbor(Direction.NORTH);
         Position northEast = north.getNeighbor(Direction.EAST);
-        assertTrue((northEast.getX() == testX + 1) && (northEast.getY() == testY + 1));
+        Position northEastNorth = northEast.getNeighbor(Direction.NORTH);
+        Position northEastNorthWest = northEastNorth.getNeighbor(Direction.WEST);
+        Position northEastNorthWestWest = northEastNorthWest.getNeighbor(Direction.WEST);
+        Position northEastNorthWestWestSouth = northEastNorthWestWest.getNeighbor(Direction.SOUTH);
+        assertTrue((northEastNorthWestWestSouth.getX() == testX + 1) && (northEast.getY() == testY - 1));
     }
 
     @Test
